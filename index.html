@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✦✧ Step right up!! ✧✦</title>
+
+  <!-- CSS for the Google Font 'Inspiration', used for title 
+      and 'Jost', used for the body -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost&family=Inspiration&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="text-above-title">
+      <p>Step right up!</p>
+      <p>Test your</p>
+    </div>
+    <h1>Memory</h1>
+  </header> 
+
+  <div class="mobile-header">
+    <p>Step right up! Test your</p>
+    <h1>Memory</h1>
+  </div>
+
+  <div class="main">
+    <button class="play-button">START</button>
+    <div class="level-selector-container">
+      <p class="selector-text">CHOOSE YOUR FATE</p>
+        <div class="level-choices">
+          <div class="easy-mode">
+
+            <div class="level-button easy-button">
+              <img src="images/4x/onestarhover.png" class="only-hover">
+              <img src="images/4x/onestar.png" class="main-level-button">
+            </div>
+            <span class="best-easy-time"></span>
+
+          </div>
+    
+          <div class="medium-mode">
+            <div class="level-button medium-button">
+              <img src="images/4x/twostarhover.png" class="only-hover">
+              <img src="images/4x/twostar.png" class="main-level-button">
+            </div>
+            <span class="best-medium-time"></span>
+          </div>
+    
+          <div class="hard-mode">
+            <div class="level-button hard-button">
+              <img src="images/4x/threestarhover.png" class="only-hover">
+              <img src="images/4x/threestar.png" class="main-level-button">
+            </div>
+            <span class="best-hard-time"></span>
+        </div>
+        </div>
+    </div>
+  <div class="grid-container">
+    
+    <div class="score-card">
+      <span id="levelDisplay" class="level-display"></span>
+      <span id="scoreDisplay"></span>
+      <span id="timeDisplay"></span>
+      <span id="moveDisplay"></span>
+      <i class="fa-solid fa-rotate-left restart-button"></i>
+    </div>
+
+
+    <div class="grid"></div>
+  </div>
+
+  <div class="win-display"></div>
+
+  <!-- Buttons for debugging -->
+ <!-- <button onclick = "win()">Cheat</button>
+  <button onclick = "resetScores()">Reset</button> -->
+</div>
+  
+
+<!-- Link to the Font Awesome page for the restart icon -->
+<script src="https://kit.fontawesome.com/4a90a8143b.js" crossorigin="anonymous"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
