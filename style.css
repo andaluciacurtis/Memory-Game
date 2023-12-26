@@ -60,3 +60,62 @@ header {
   color:white;
   transition-duration:0.3s;
 }
+
+.level-selector-container {
+  width:400px;
+  margin:auto;
+  display: none;
+}
+
+.level-choices {
+  display:flex;
+  justify-content:space-evenly;
+  padding:15px;
+  margin-top:-10px;
+}
+
+.selector-text {
+  background-color:#6E1D3F;
+  padding:10px;
+  border: 2px rgb(255, 255, 255) solid;
+  outline:6px #6E1D3F solid;
+  color:white;
+  margin: 20px 40px 10px 40px;
+}
+
+.easy-mode, .medium-mode, .hard-mode {
+  padding:10px;
+  width:30%;
+
+  justify-content:center;
+}
+
+.level-button {
+  cursor:pointer;
+  background-color:red;
+  position:relative;
+}
+
+.level-button img {
+  width:90px;
+  height:90px;
+  position:absolute;
+  left:0;
+  padding-left:5px;
+}
+
+.level-button img.main-level-button:hover {
+  opacity:0;
+  cursor:pointer;
+}
+
+.level-button img.only-hover {
+  width:88px;
+  height:88px;
+  padding:1px 1px 1px 6px;
+}
+
+.best-easy-time, .best-medium-time, .best-hard-time {
+  line-height:3px;
+  margin-top:110px;
+}
