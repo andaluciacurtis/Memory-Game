@@ -6,18 +6,57 @@ html, body {
   height: 100%;
 }
 
+/* TEXT */
+h1 {
+  font-size:5rem;
+  text-shadow:0px 3px 5px rgba(49, 7, 49, 0.596);
+}
+
+/* COMPONENTS */
+
 .outer-container {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  flex-direction: column;
   height: 100%;
+
+  background-image:linear-gradient(white, rgb(176, 252, 180));
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  height:100%;
+  width:100%;
 }
 
 header {
   background-image:url(images/4x/bg.png);
-  background-repeat:no-repeat;
-  background-size:520px;
+  background-size: 350px;
+  background-repeat: no-repeat;
+
+  width: 350px;
+  padding: 50px;
+
+  color:white;
+  text-align:center;
+}
+
+.play-button{
+  padding:7px 20px;
   
-  padding:10px;
-  margin-top: 20px;
+  background-color:transparent;
+  border-radius:10px;
+  border: 3px #6E1D3F solid;
+  font-family: 'Jost', sans-serif;
+  color:#6E1D3F;
+  font-weight:bold;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+.play-button:hover {
+  background-color:#8FD7EF;
+  border: 3px #8FD7EF solid;
+  color:white;
+  transition-duration:0.3s;
 }
