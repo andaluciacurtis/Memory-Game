@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Jost&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 html, body {
   height: 100%;
+  font-family: 'Jost', sans-serif;
 }
 
 /* TEXT */
 h1 {
-  font-size:5rem;
+  font-size: min(110px, 25vw);
   text-shadow:0px 3px 5px rgba(49, 7, 49, 0.596);
+  font-family: 'Inspiration', cursive;
 }
 
 /* COMPONENTS */
@@ -31,14 +35,19 @@ h1 {
 
 header {
   background-image:url(images/4x/bg.png);
-  background-size: 350px;
+  background-size:min(450px, 98%);
   background-repeat: no-repeat;
 
-  width: 350px;
-  padding: 50px;
+  width: min(450px, 98%);
+  padding: 50px 0;
 
   color:white;
   text-align:center;
+}
+
+.above-title {
+  margin-bottom: -20px;
+  padding-left: 40px;
 }
 
 .play-button{
@@ -70,8 +79,7 @@ header {
 .level-choices {
   display:flex;
   justify-content:space-evenly;
-  padding:15px;
-  margin-top:-10px;
+  padding-top: 10px;
 }
 
 .selector-text {
@@ -81,41 +89,53 @@ header {
   outline:6px #6E1D3F solid;
   color:white;
   margin: 20px 40px 10px 40px;
+  text-align: center;
 }
 
 .easy-mode, .medium-mode, .hard-mode {
-  padding:10px;
-  width:30%;
-
   justify-content:center;
 }
 
 .level-button {
-  cursor:pointer;
-  background-color:red;
-  position:relative;
+  width: 90px;
+  height: 90px;
+  perspective: 500px;
 }
 
-.level-button img {
-  width:90px;
-  height:90px;
-  position:absolute;
-  left:0;
-  padding-left:5px;
+.level-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
 }
 
-.level-button img.main-level-button:hover {
-  opacity:0;
-  cursor:pointer;
+.level-button:hover > .level-card {
+  cursor: pointer;
+  transform: rotateY(180deg);
 }
 
-.level-button img.only-hover {
-  width:88px;
-  height:88px;
-  padding:1px 1px 1px 6px;
+.front, .back {
+  height: 100%;
+  width: 100%;
+
+  position: absolute;
+  backface-visibility: hidden;
 }
+
+.back {
+  transform: rotateY(180deg);
+}
+
 
 .best-easy-time, .best-medium-time, .best-hard-time {
   line-height:3px;
   margin-top:110px;
+}
+
+@media (min-width: 400px) {
+  header {
+    padding: 70px 70px 70px 50px;
+  }
 }
