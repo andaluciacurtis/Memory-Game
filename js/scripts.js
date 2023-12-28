@@ -71,6 +71,7 @@ mediumButton.addEventListener('mouseover', ()=> {
   selectorText.style.color = "#afd67e";
   selectorText.style.fontWeight = "bold";
 });
+
 mediumButton.addEventListener('mouseout', ()=> {
   selectorText.innerHTML = 'CHOOSE YOUR FATE';
   selectorText.style.color = "white";
@@ -91,6 +92,7 @@ hardButton.addEventListener('mouseout', ()=> {
 });
 
 const gridDisplay = document.querySelector('.grid');
+const scoreContainer = document.querySelector('.score-container');
 
 
 // Main game variables
@@ -101,7 +103,6 @@ let cardsWon = [];
 let level = null;
 
 let moves = 0;
-let roundTime = 0;
 let newHighScore = false;
 
 let cardsOnBoard = [];
@@ -112,6 +113,10 @@ function play(cardAmount, chosenLevel) {
   gridDisplay.style.display="grid";
   gridDisplay.style.gridTemplateColumns=`repeat(${cardAmount / 2}, 1fr)`;
   gridDisplay.innerHTML = '';
+  resetTimer();
+
+  scoreContainer.style.display="block";
+  startTimer();
 
   cardsOnBoard = [];
   moves = 0;
@@ -134,8 +139,8 @@ function decideCards(cardAmount) {
   cardOptions.sort(()=> 0.5 - Math.random());
 
   for (let i = 0; i < cardAmount; i++) {
-    cardsOnBoard[i] = { name: cardOptions[i], img: `images/${cardOptions[i]}.png`};
-    cardsOnBoard[i + cardAmount] = { name: cardOptions[i], img: `images/${cardOptions[i]}.png`};
+    cardsOnBoard[i] = { name: cardOptions[i], img: `../images/${cardOptions[i]}.png`};
+    cardsOnBoard[i + cardAmount] = { name: cardOptions[i], img: `../images/${cardOptions[i]}.png`};
   }
 
   cardsOnBoard.sort(()=> 0.5 - Math.random());

@@ -33,7 +33,7 @@ h1 {
 }
 
 header {
-  background-image:url(images/4x/bg.png);
+  background-image:url(../images/4x/bg.png);
   background-size:min(450px, 98%);
   background-repeat: no-repeat;
 
@@ -133,10 +133,28 @@ header {
   padding-top: 10px;
 }
 
-@media (min-width: 400px) {
-  header {
-    padding: 70px 70px 70px 50px;
-  }
+.score-container {
+  display: none;
+  padding: 10px;
+  text-align: center;
+}
+
+#levelDisplay {
+  font-weight: bold;
+  color:#6E1D3F;
+}
+
+.restart-button {
+  font-size:1rem;
+  font-weight:bold;
+  color:#6E1D3F;
+  cursor:pointer;
+}
+
+.restart-button:hover, .play-again:hover {
+  transform: rotate(-360deg);
+  transition-duration:1s;
+  color: #f286b6;
 }
 
 .grid {
@@ -148,4 +166,10 @@ header {
   display: none;
   gap: 10px;
   padding: 10px;
+}
+
+@media (min-width: 400px) {
+  header {
+    padding: 70px 70px 70px 50px;
+  }
 }
