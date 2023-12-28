@@ -54,28 +54,40 @@ const easyButton = document.querySelector('.easy-button');
 easyButton.addEventListener('click', ()=> {play(6, 'easy')});
 easyButton.addEventListener('mouseover', ()=> {
   selectorText.innerHTML = 'EASY';
+  selectorText.style.color = "#8ed7f0";
+  selectorText.style.fontWeight = "bold";
 });
 
 easyButton.addEventListener('mouseout', ()=> {
   selectorText.innerHTML = 'CHOOSE YOUR FATE';
+  selectorText.style.color = "white";
+  selectorText.style.fontWeight = "normal";
 });
 
 const mediumButton = document.querySelector('.medium-button');
 mediumButton.addEventListener('click', ()=> {play(12, 'medium')});
 mediumButton.addEventListener('mouseover', ()=> {
   selectorText.innerHTML = 'MEDIUM';
+  selectorText.style.color = "#afd67e";
+  selectorText.style.fontWeight = "bold";
 });
 mediumButton.addEventListener('mouseout', ()=> {
   selectorText.innerHTML = 'CHOOSE YOUR FATE';
+  selectorText.style.color = "white";
+  selectorText.style.fontWeight = "normal";
 });
 
 const hardButton = document.querySelector('.hard-button');
 hardButton.addEventListener('click', ()=> {play(18, 'hard')});
 hardButton.addEventListener('mouseover', ()=> {
   selectorText.innerHTML = 'HARD';
+  selectorText.style.color = "#f286b6";
+  selectorText.style.fontWeight = "bold";
 });
 hardButton.addEventListener('mouseout', ()=> {
   selectorText.innerHTML = 'CHOOSE YOUR FATE';
+  selectorText.style.color = "white";
+  selectorText.style.fontWeight = "normal";
 });
 
 const gridDisplay = document.querySelector('.grid');
@@ -131,13 +143,23 @@ function decideCards(cardAmount) {
 
 // Creates the board for the game with the chosen cards, starting them all off face-down
 function createBoard() {
+
+
   for (let i = 0; i < cardsOnBoard.length; i++) {
-    const cardElement = document.createElement('img');
+    const cardElement = document.createElement('div');
 
-    cardElement.setAttribute('src', 'images/back.png');
-    cardElement.setAttribute('data-id', i);
-    //cardElement.addEventListener('click', flipCard);
-
+    cardElement.innerHTML = `
+      <div class="card">
+        <img src="images/${cardOptions[i]}.png" class="back">
+        <img src="images/back.png" class="front">
+      </div>
+    `;
+  
+    cardElement.classList.add("card-container");
     gridDisplay.append(cardElement);
+
+    cardElement.addEventListener("click", ()=>{
+      cardElement.firstElementChild.style.transform = "rotateY(180deg)";
+    })
   }
 }

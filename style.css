@@ -97,24 +97,26 @@ header {
   perspective: 500px;
 }
 
-.level-card {
+.card {
   position: relative;
   height: 100%;
   width: 100%;
   
-  transition: transform 1500ms;
+  transition: transform 1000ms;
   transform-style: preserve-3d;
 }
 
-.level-button:hover > .level-card {
+.card-container {
+  width: 84px;
+  height: 84px;
+}
+
+.level-button:hover > .card {
   cursor: pointer;
   transform: rotateY(180deg);
 }
 
 .front, .back {
-  height: 100%;
-  width: 100%;
-
   position: absolute;
   backface-visibility: hidden;
 }
@@ -140,9 +142,6 @@ header {
   border-radius:10px;
 
   display: none;
-}
-
-.grid img { 
-  padding: 3px;
-  cursor:pointer;
+  gap: 10px;
+  padding: 10px;
 }
