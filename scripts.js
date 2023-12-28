@@ -150,7 +150,7 @@ function createBoard() {
 
     cardElement.innerHTML = `
       <div class="card">
-        <img src="images/${cardOptions[i]}.png" class="back">
+        <img src="images/${cardsOnBoard[i].name}.png" class="back">
         <img src="images/back.png" class="front">
       </div>
     `;
