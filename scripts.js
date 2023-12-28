@@ -49,25 +49,74 @@ function showHighScores() {
 }
 
 const easyButton = document.querySelector('.easy-button');
-easyButton.addEventListener('click', ()=> {play(8, 'easy')});
+easyButton.addEventListener('click', ()=> {play(6, 'easy')});
 
 const mediumButton = document.querySelector('.medium-button');
-mediumButton.addEventListener('click', ()=> {play(16, 'medium')});
+mediumButton.addEventListener('click', ()=> {play(12, 'medium')});
 
 const hardButton = document.querySelector('.hard-button');
-hardButton.addEventListener('click', ()=> {play(20, 'hard')});
+hardButton.addEventListener('click', ()=> {play(18, 'hard')});
 
 const gridDisplay = document.querySelector('.grid');
 
 
+// Main game variables
+let cardsChosen = [];
+let cardsChosenIds = [];
+let cardsWon = [];
 
+let level = null;
 
+let moves = 0;
+let roundTime = 0;
+let newHighScore = false;
 
+let cardsOnBoard = [];
+const cardOptions = ['apple', 'balloon', 'bow', 'butterfly', 'candy', 'cloud', 'clover', 'crown', 'diamond', 'egg', 'exclamation', 'fish', 'flower', 'ghost', 'grape', 'heart', 'icecream', 'moon', 'mug', 'mushroom', 'musicnote', 'orange', 'planet', 'present', 'snowflake', 'star', 'strawberry', 'sun', 'tree', 'tulip', 'umbrella', 'zzz'];
 
 function play(cardAmount, chosenLevel) {
   document.querySelector('.level-selector-container').style.display="none";
-
-
-  gridDisplay.style.display="flex";
+  gridDisplay.style.display="grid";
+  gridDisplay.style.gridTemplateColumns=`repeat(${cardAmount / 2}, 1fr)`;
   gridDisplay.innerHTML = '';
+
+  cardsOnBoard = [];
+  moves = 0;
+
+  // Choosing level difficulty
+  if (chosenLevel === "easy") {
+    levelDisplay.innerHTML = '★';
+  } else if (chosenLevel === "medium") {
+    levelDisplay.innerHTML = '★★';
+  } else {
+    levelDisplay.innerHTML = '★★★';
+  }
+
+  decideCards(cardAmount);
+  createBoard();
+}
+
+// Randomizes the card options and then chooses the first 'cardAmount' amount
+function decideCards(cardAmount) {
+  cardOptions.sort(()=> 0.5 - Math.random());
+
+  for (let i = 0; i < cardAmount; i++) {
+    cardsOnBoard[i] = { name: cardOptions[i], img: `images/${cardOptions[i]}.png`};
+    cardsOnBoard[i + cardAmount] = { name: cardOptions[i], img: `images/${cardOptions[i]}.png`};
+  }
+
+  cardsOnBoard.sort(()=> 0.5 - Math.random());
+}
+
+// Creates the board for the game with the chosen cards, starting them all off face-down
+function createBoard() {
+  for (let i = 0; i < cardsOnBoard.length; i++) {
+    const cardElement = document.createElement('img');
+
+    cardElement.setAttribute('src', 'images/back.png');
+    cardElement.setAttribute('data-id', i);
+    //cardElement.addEventListener('click', flipCard);
+
+    gridDisplay.append(cardElement);
+  }
 }
