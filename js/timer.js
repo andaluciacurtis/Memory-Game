@@ -1,4 +1,5 @@
 // Script for the timer
+
 let [seconds, minutes, hours] = [0,0,0];
 let timer = null;
 let roundTime = 0;
@@ -15,7 +16,6 @@ function timerCount() {
       hours++;
     }
   }
-
   timeDisplay.innerHTML = `<span class="highlight-text">TIME:</span> ${displayTime()}`;
 }
 
