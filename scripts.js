@@ -48,14 +48,35 @@ function showHighScores() {
   }
 }
 
+const selectorText = document.querySelector(".selector-text");
+
 const easyButton = document.querySelector('.easy-button');
 easyButton.addEventListener('click', ()=> {play(6, 'easy')});
+easyButton.addEventListener('mouseover', ()=> {
+  selectorText.innerHTML = 'EASY';
+});
+
+easyButton.addEventListener('mouseout', ()=> {
+  selectorText.innerHTML = 'CHOOSE YOUR FATE';
+});
 
 const mediumButton = document.querySelector('.medium-button');
 mediumButton.addEventListener('click', ()=> {play(12, 'medium')});
+mediumButton.addEventListener('mouseover', ()=> {
+  selectorText.innerHTML = 'MEDIUM';
+});
+mediumButton.addEventListener('mouseout', ()=> {
+  selectorText.innerHTML = 'CHOOSE YOUR FATE';
+});
 
 const hardButton = document.querySelector('.hard-button');
 hardButton.addEventListener('click', ()=> {play(18, 'hard')});
+hardButton.addEventListener('mouseover', ()=> {
+  selectorText.innerHTML = 'HARD';
+});
+hardButton.addEventListener('mouseout', ()=> {
+  selectorText.innerHTML = 'CHOOSE YOUR FATE';
+});
 
 const gridDisplay = document.querySelector('.grid');
 
