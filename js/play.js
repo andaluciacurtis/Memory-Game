@@ -19,7 +19,15 @@ const cardOptions = ['apple', 'balloon', 'bow', 'butterfly', 'candy', 'cloud', '
 function play(cardAmount, chosenLevel) {
   document.querySelector('.level-selector-container').style.display="none";
   gridDisplay.style.display="grid";
-  gridDisplay.style.gridTemplateColumns=`repeat(4, 1fr)`;
+
+  if (chosenLevel === "hard" && window.innerWidth > 450) {
+    gridDisplay.style.gridTemplateColumns=`repeat(6, 1fr)`;
+  } else {
+    gridDisplay.style.gridTemplateColumns=`repeat(4, 1fr)`;
+  }
+
+
+
   gridDisplay.innerHTML = '';
   resetTimer();
 
