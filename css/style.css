@@ -16,6 +16,13 @@ h1 {
   font-family: 'Inspiration', cursive;
 }
 
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+  color: #6E1D3F;
+  padding: 10px;
+}
+
 /* COMPONENTS */
 
 .outer-container {
@@ -108,11 +115,18 @@ header {
 
   transition: transform 1000ms;
   transform-style: preserve-3d;
+
+  cursor: pointer;
+}
+
+.card-container:hover {
+  box-shadow: rgba(0, 0, 0, 0.692) 0 0 10px;;
 }
 
 .card-container {
   width: 84px;
   height: 84px;
+  transition: opacity 1000ms;
 }
 
 .level-button:hover > .card {
@@ -187,6 +201,64 @@ header {
   color:#6E1D3F;
   font-weight:bold;
 }
+
+.matches {
+  opacity: 0;
+}
+
+
+
+
+.win-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-high-score {
+  font-size: 13px;
+  font-weight: bold;
+  color: #F385AC;
+}
+
+
+
+
+.play-again {
+  padding:20px;
+  margin-top:10px;
+  border-radius:50px;
+  font-size:2rem;
+  color:white;
+  cursor:pointer;
+  
+  background-color:#8ed7f0;
+  border: 2px rgb(255, 255, 255) solid;
+  outline:5px #8ed7f0 solid;
+}
+
+.play-again:hover {
+  background-color:#F385AC;
+  border: 2px rgb(255, 255, 255) solid;
+  outline:5px #F385AC solid;
+  color: white;
+}
+
+h2 span {
+  display: inline-block;
+  animation: dancingText 1s ease-in-out infinite alternate;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+@keyframes dancingText {
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
 
 @media (min-width: 400px) {
   header {

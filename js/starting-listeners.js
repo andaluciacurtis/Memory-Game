@@ -19,7 +19,7 @@ easyButton.addEventListener('mouseover', ()=> {
   bestEasyContainer.style.opacity = "100%";
 });
 easyButton.addEventListener('mouseout', ()=> {
-  selectorText.innerHTML = 'CHOOSE YOUR FATE';
+  selectorText.innerHTML = 'Choose your fate!';
   selectorText.style.color = "white";
   selectorText.style.fontWeight = "normal";
   bestEasyContainer.style.opacity = "0";
@@ -37,7 +37,7 @@ mediumButton.addEventListener('mouseover', ()=> {
 });
 
 mediumButton.addEventListener('mouseout', ()=> {
-  selectorText.innerHTML = 'CHOOSE YOUR FATE';
+  selectorText.innerHTML = 'Choose your fate!';
   selectorText.style.color = "white";
   selectorText.style.fontWeight = "normal";
   bestMediumContainer.style.opacity = "0";
@@ -55,7 +55,7 @@ hardButton.addEventListener('mouseover', ()=> {
 });
 
 hardButton.addEventListener('mouseout', ()=> {
-  selectorText.innerHTML = 'CHOOSE YOUR FATE';
+  selectorText.innerHTML = 'Choose your fate!';
   selectorText.style.color = "white";
   selectorText.style.fontWeight = "normal";
   bestHardContainer.style.opacity = "0";
