@@ -57,10 +57,9 @@ function showHighScores() {
   }
 }
 
-
-
 // Saves score to the player's local storage so it can be displayed next time they play
 function saveScore() {
+  console.log("saving score");
   let roundScore = {
     moves: moves,
     time: roundTime,

@@ -29,7 +29,7 @@ function play(cardAmount, chosenLevel) {
   cardsOnBoard = [];
   moves = 0;
   newHighScore = false;
-  levelColor="";
+  level = chosenLevel;
 
   // Choosing level difficulty
   if (chosenLevel === "easy") {
@@ -183,6 +183,7 @@ function win() {
       <i class="fa-solid fa-rotate-left play-again"></i>
     `;
 
+  console.log("win screen");
   saveScore();
 
   newHighScore? document.querySelector('.new-high-score').innerHTML = `NEW HIGH SCORE!!` : document.querySelector('.new-high-score').innerHTML = ``;
