@@ -29,7 +29,6 @@ h2 {
 }
 
 /* COMPONENTS */
-
 .outer-container {
   display: flex;
   justify-content: center;
@@ -74,12 +73,7 @@ header img {
   z-index: 999;
 }
 
-
-/* .above-title {
-  margin-bottom: -20px;
-  padding-left: 40px;
-} */
-
+/* STARTING PAGES */
 .play-button{
   padding:7px 20px;
   
@@ -122,10 +116,6 @@ header img {
   text-align: center;
 }
 
-.high-score-text {
-  color: #f7e085;
-}
-
 .level-button {
   width: 90px;
   height: 90px;
@@ -136,43 +126,8 @@ header img {
   width: 100%;
 }
 
-.card {
-  position: relative;
-  height: 100%;
-  width: 100%;
-
-  transition: transform 1000ms;
-  transform-style: preserve-3d;
-
-  cursor: pointer;
-}
-
-.card-container:hover {
-  box-shadow: rgba(0, 0, 0, 0.692) 0 0 10px;;
-}
-
-.card-container {
-  width: 55px;
-  height: 55px;
-  transition: opacity 1000ms;
-}
-
-.card-container img {
-  width: 55px;
-  height: 55px;
-}
-
 .level-button:hover > .card {
   cursor: pointer;
-  transform: rotateY(180deg);
-}
-
-.front, .back {
-  position: absolute;
-  backface-visibility: hidden;
-}
-
-.back {
   transform: rotateY(180deg);
 }
 
@@ -195,6 +150,7 @@ header img {
   transition: opacity 1s;
 }
 
+/* BOARD VIEW */
 .score-container {
   display: none;
   padding-bottom: 10px;
@@ -230,18 +186,11 @@ header img {
   padding: 10px;
 }
 
-.highlight-text {
-  color:#6E1D3F;
-  font-weight:bold;
-}
-
 .matches {
   opacity: 0;
 }
 
-
-
-
+/* WINNING VIEW */
 .win-display {
   display: flex;
   flex-direction: column;
@@ -254,12 +203,18 @@ header img {
   color: #F385AC;
 }
 
+.high-score-text {
+  color: #f7e085;
+}
 
-
+.highlight-text {
+  color:#6E1D3F;
+  font-weight:bold;
+}
 
 .play-again {
   padding:20px;
-  margin-top:10px;
+  margin-top:25px;
   border-radius:50px;
   font-size:2rem;
   color:white;
@@ -277,6 +232,43 @@ header img {
   color: white;
 }
 
+/* FLIPPABLE CARD STYLING */
+.card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  transition: transform 1000ms;
+  transform-style: preserve-3d;
+
+  cursor: pointer;
+}
+
+.front, .back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.card-container:hover {
+  box-shadow: rgba(0, 0, 0, 0.692) 0 0 10px;;
+}
+
+.card-container {
+  width: 55px;
+  height: 55px;
+  transition: opacity 1000ms;
+}
+
+.card-container img {
+  width: 55px;
+  height: 55px;
+}
+
+/* DANCING TEXT SYLING */
 h2 span {
   display: inline-block;
   animation: dancingText 1s ease-in-out infinite alternate;
@@ -292,7 +284,7 @@ h2 span {
   }
 }
 
-
+/* DESKTOP VERSION */
 @media (min-width: 541px) {
   .card-container {
     width: 84px;
