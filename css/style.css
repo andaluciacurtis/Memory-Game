@@ -42,21 +42,43 @@ h2 {
 }
 
 header {
-  background-image:url(../images/4x/bg.png);
-  background-size:min(450px, 98%);
-  background-repeat: no-repeat;
-
-  width: min(450px, 98%);
-  padding: 50px 0;
-
   color:white;
   text-align:center;
+  position: relative;
+
+  width: min(450px, 90vw);
+  height: min(270px, 53vw);
 }
 
-.above-title {
+header img {
+  position: absolute;
+
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  width: min(450px, 90vw);
+  z-index: 1;
+}
+
+.header-text {
+  position: absolute;
+
+  right: 0;
+  left: 0;
+  top: 20%;
+  bottom: 0;
+  margin: auto;
+  z-index: 999;
+}
+
+
+/* .above-title {
   margin-bottom: -20px;
   padding-left: 40px;
-}
+} */
 
 .play-button{
   padding:7px 20px;
@@ -130,9 +152,14 @@ header {
 }
 
 .card-container {
-  width: 84px;
-  height: 84px;
+  width: 55px;
+  height: 55px;
   transition: opacity 1000ms;
+}
+
+.card-container img {
+  width: 55px;
+  height: 55px;
 }
 
 .level-button:hover > .card {
@@ -170,7 +197,7 @@ header {
 
 .score-container {
   display: none;
-  padding: 10px;
+  padding-bottom: 10px;
   text-align: center;
 }
 
@@ -266,8 +293,15 @@ h2 span {
 }
 
 
-@media (min-width: 400px) {
-  header {
-    padding: 70px 70px 70px 50px;
+@media (min-width: 541px) {
+  .card-container {
+    width: 84px;
+    height: 84px;
+    transition: opacity 1000ms;
+  }
+
+  .card-container img {
+    width: 84px;
+    height: 84px;
   }
 }
