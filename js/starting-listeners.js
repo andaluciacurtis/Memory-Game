@@ -27,7 +27,7 @@ easyButton.addEventListener('mouseout', ()=> {
 
 const mediumButton = document.querySelector('.medium-button');
 
-mediumButton.addEventListener('click', ()=> {play(12, 'medium')});
+mediumButton.addEventListener('click', ()=> {play(8, 'medium')});
 
 mediumButton.addEventListener('mouseover', ()=> {
   selectorText.innerHTML = 'MEDIUM';
@@ -45,7 +45,7 @@ mediumButton.addEventListener('mouseout', ()=> {
 
 const hardButton = document.querySelector('.hard-button');
 
-hardButton.addEventListener('click', ()=> {play(18, 'hard')});
+hardButton.addEventListener('click', ()=> {play(12, 'hard')});
 
 hardButton.addEventListener('mouseover', ()=> {
   selectorText.innerHTML = 'HARD';

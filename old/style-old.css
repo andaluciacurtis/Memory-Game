@@ -134,6 +134,11 @@ header {
   font-weight:bold;
 }
 
+
+.high-score-text {
+  color: red;
+}
+
 /* Grid */
 
 .grid {

@@ -17,7 +17,7 @@ function showHighScores() {
     bestEasyContainer.style.outline = "3px solid #8ed7f0";
 
     bestEasyContainer.innerHTML = `
-      <p class="highlight-text">HIGH SCORE</p>
+      <p class="high-score-text">HIGH SCORE</p>
       <p>Moves:${easyHighScore.moves}</p>
       <p>Time:${easyHighScore.time}</p>
     `;
@@ -32,7 +32,7 @@ function showHighScores() {
     bestMediumContainer.style.outline = "3px solid #afd67e";
 
     bestMediumContainer.innerHTML = `
-      <p class="highlight-text">HIGH SCORE</p>
+      <p class="high-score-text">HIGH SCORE</p>
       <p>Moves:${mediumHighScore.moves}</p>
       <p>Time:${mediumHighScore.time}</p>
     `;
@@ -48,7 +48,7 @@ function showHighScores() {
     bestHardContainer.style.outline = "3px solid #f286b6";
 
     bestHardContainer.innerHTML = `
-      <p class="highlight-text">HIGH SCORE</p>
+      <p class="high-score-text">HIGH SCORE</p>
       <p>Moves:${hardHighScore.moves}</p>
       <p>Time:${hardHighScore.time}</p>
     `;

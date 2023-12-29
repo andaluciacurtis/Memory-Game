@@ -19,7 +19,7 @@ const cardOptions = ['apple', 'balloon', 'bow', 'butterfly', 'candy', 'cloud', '
 function play(cardAmount, chosenLevel) {
   document.querySelector('.level-selector-container').style.display="none";
   gridDisplay.style.display="grid";
-  gridDisplay.style.gridTemplateColumns=`repeat(${cardAmount / 2}, 1fr)`;
+  gridDisplay.style.gridTemplateColumns=`repeat(4, 1fr)`;
   gridDisplay.innerHTML = '';
   resetTimer();
 
@@ -157,6 +157,7 @@ function win() {
 
   const winDisplay = document.querySelector(".win-display");
   winDisplay.style.display = "flex";
+  winDisplay.innerHTML = '';
 
   let youWonLetters = ["☆","✦","Y","O","U&nbsp","W","O","N","!","!","✦","☆"];
   let youWonText = document.createElement("h2");
@@ -199,15 +200,15 @@ function win() {
 const restartButton = document.querySelector('.restart-button');
 restartButton.addEventListener('click', ()=> {
   gridDisplay.style.display = "none";
-  document.querySelector('.score-card').style.display = "none";
+  document.querySelector('.score-container').style.display = "none";
   document.querySelector('.level-selector-container').style.display="block";
   showHighScores();
 });
 
-cheatButton.addEventListener("click", ()=>{
-  win();
-})
+// cheatButton.addEventListener("click", ()=>{
+//   win();
+// })
 
-fullResetButton.addEventListener("click", ()=>{
-  resetScores();
-})
+// fullResetButton.addEventListener("click", ()=>{
+//   resetScores();
+// })

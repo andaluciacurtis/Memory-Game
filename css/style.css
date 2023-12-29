@@ -9,6 +9,11 @@ html, body {
   font-family: 'Jost', sans-serif;
 }
 
+html {
+  background-image:linear-gradient(white, rgb(176, 252, 180));
+  background-attachment: fixed;
+}
+
 /* TEXT */
 h1 {
   font-size: min(110px, 25vw);
@@ -31,9 +36,6 @@ h2 {
   align-items: center;
 
   flex-direction: column;
-
-  background-image:linear-gradient(white, rgb(176, 252, 180));
-  background-attachment: fixed;
 
   height:100%;
   width:100%;
@@ -96,6 +98,10 @@ header {
   color:white;
   margin: 20px 40px 10px 40px;
   text-align: center;
+}
+
+.high-score-text {
+  color: #f7e085;
 }
 
 .level-button {
