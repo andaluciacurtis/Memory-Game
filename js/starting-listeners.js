@@ -1,4 +1,5 @@
-// Includes the listeners for the start button as well as level select
+// Includes the listeners for the start button and level selection
+
 const playButton = document.querySelector('.play-button');
 playButton.addEventListener('click', ()=> {
   playButton.style.display = 'none';
@@ -7,6 +8,7 @@ playButton.addEventListener('click', ()=> {
 });
 
 const selectorText = document.querySelector(".selector-text");
+
 
 const easyButton = document.querySelector('.easy-button');
 
@@ -25,6 +27,7 @@ easyButton.addEventListener('mouseout', ()=> {
   bestEasyContainer.style.opacity = "0";
 });
 
+
 const mediumButton = document.querySelector('.medium-button');
 
 mediumButton.addEventListener('click', ()=> {play(8, 'medium')});
@@ -42,6 +45,7 @@ mediumButton.addEventListener('mouseout', ()=> {
   selectorText.style.fontWeight = "normal";
   bestMediumContainer.style.opacity = "0";
 });
+
 
 const hardButton = document.querySelector('.hard-button');
 

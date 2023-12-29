@@ -1,5 +1,4 @@
-// Script for the timer
-
+// Script for the game timer
 let [seconds, minutes, hours] = [0,0,0];
 let timer = null;
 let roundTime = 0;

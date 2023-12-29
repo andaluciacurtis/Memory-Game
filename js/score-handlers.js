@@ -6,7 +6,6 @@ let easyHighScore = JSON.parse(localStorage.getItem('easyHighScore')) || null;
 let mediumHighScore = JSON.parse(localStorage.getItem('mediumHighScore')) || null;
 let hardHighScore = JSON.parse(localStorage.getItem('hardHighScore')) || null;
 
-
 // Fetches data from previous games to display below the difficulty selectors
 // If there are no previous games, then nothing is displayed.
 function showHighScores() {

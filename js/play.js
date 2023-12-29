@@ -1,15 +1,11 @@
-// Main game variables
-
-
+// Creates the variables for the main game and runs a round
 const gridDisplay = document.querySelector('.grid');
 const scoreContainer = document.querySelector('.score-container');
 
 let cardsChosen = [];
-let cardsChosenIds = [];
 let cardsWon = [];
 
 let level = null;
-
 let moves = 0;
 let newHighScore = false;
 
@@ -19,27 +15,22 @@ const cardOptions = ['apple', 'balloon', 'bow', 'butterfly', 'candy', 'cloud', '
 function play(cardAmount, chosenLevel) {
   document.querySelector('.level-selector-container').style.display="none";
   gridDisplay.style.display="grid";
+  scoreContainer.style.display="block";
 
   if (chosenLevel === "hard" && window.innerWidth > 450) {
     gridDisplay.style.gridTemplateColumns=`repeat(6, 1fr)`;
   } else {
     gridDisplay.style.gridTemplateColumns=`repeat(4, 1fr)`;
   }
-
-
-
+  
+  // Resetting
   gridDisplay.innerHTML = '';
-  resetTimer();
-
-  scoreContainer.style.display="block";
-  startTimer();
-
   cardsOnBoard = [];
   moves = 0;
   newHighScore = false;
-  level = chosenLevel;
+  resetTimer();
 
-  // Choosing level difficulty
+  level = chosenLevel;
   if (chosenLevel === "easy") {
     levelDisplay.innerHTML = '★';
   } else if (chosenLevel === "medium") {
@@ -50,11 +41,13 @@ function play(cardAmount, chosenLevel) {
 
   moveDisplay.innerHTML = `<span class="highlight-text">MOVES:</span> ${moves}`
 
+  startTimer();
+
   decideCards(cardAmount);
   createBoard();
 }
 
-// Randomizes the card options and then chooses the first 'cardAmount' amount
+// Randomizes card options and then chooses the first n cards, depending on level
 function decideCards(cardAmount) {
   cardOptions.sort(()=> 0.5 - Math.random());
 
@@ -66,7 +59,7 @@ function decideCards(cardAmount) {
   cardsOnBoard.sort(()=> 0.5 - Math.random());
 }
 
-// Creates the board for the game with the chosen cards, starting them all off face-down
+// Creates board for the game with the chosen cards, starting them all off face-down
 function createBoard() {
   for (let i = 0; i < cardsOnBoard.length; i++) {
     const cardElement = document.createElement('div');
@@ -87,6 +80,7 @@ function createBoard() {
   }
 }
 
+// Reveals card to user and prepares to compare chosen cards
 function flipCard() {
   this.style.boxShadow = "none";
   this.firstElementChild.style.transform = "rotateY(180deg)";
@@ -132,7 +126,7 @@ function checkMatch() {
       cardsWon.push(cardsChosen);
 
     } else {
-      // Not a match => flips them back over
+      // Not a match => flip them back over
       setTimeout(() => {
         cardOneElement.firstElementChild.style.transform = "none";
         cardTwoElement.firstElementChild.style.transform = "none";
@@ -153,20 +147,19 @@ function checkMatch() {
   moveDisplay.innerHTML = `<span class="highlight-text">MOVES:</span> ${moves}`;
 }
 
-// Once the player wins, it displays the final time and amount of moves, then asks
-// if the player would like to play again.
+// Once the player wins, it displays the final time and amount of moves, then asks if the player would like to play again.
 function win() {
   stopTimer();
   roundTime = displayTime();
   
   gridDisplay.style.display="none";
   document.querySelector('.score-container').style.display = "none";
-  
 
   const winDisplay = document.querySelector(".win-display");
   winDisplay.style.display = "flex";
   winDisplay.innerHTML = '';
 
+  // Setting up dancing text
   let youWonLetters = ["☆","✦","Y","O","U&nbsp","W","O","N","!","!","✦","☆"];
   let youWonText = document.createElement("h2");
 
@@ -181,10 +174,10 @@ function win() {
       youWonText.innerHTML += `<span style="--i:${i};">${youWonLetters[i]}</span>`;
     }
   }
-
   youWonText.classList.add("you-won-text");
   winDisplay.appendChild(youWonText);
 
+  // Creating display for user
   winDisplay.innerHTML += `
       <p> <span class="highlight-text">Total time:</span> ${roundTime}</p>
       <p> <span class="highlight-text">Total moves:</span> ${moves}</p>
@@ -205,6 +198,7 @@ function win() {
   });
 }
 
+// Returns user to the level select screen
 const restartButton = document.querySelector('.restart-button');
 restartButton.addEventListener('click', ()=> {
   gridDisplay.style.display = "none";
@@ -212,11 +206,3 @@ restartButton.addEventListener('click', ()=> {
   document.querySelector('.level-selector-container').style.display="block";
   showHighScores();
 });
-
-// cheatButton.addEventListener("click", ()=>{
-//   win();
-// })
-
-// fullResetButton.addEventListener("click", ()=>{
-//   resetScores();
-// })
