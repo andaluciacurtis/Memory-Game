@@ -62,7 +62,7 @@ function saveScore() {
   let roundScore = {
     moves: moves,
     time: roundTime,
-    calculatedScore: (seconds + 60*minutes + 60*hours) * moves
+    calculatedScore: (seconds + 6*minutes + 12*hours) * moves
   }
 
   if (level === 'easy' && (!easyHighScore || roundScore.calculatedScore < easyHighScore.calculatedScore)) {
