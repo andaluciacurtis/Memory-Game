@@ -76,3 +76,11 @@ function createBoard() {
     })
   }
 }
+
+const restartButton = document.querySelector('.restart-button');
+restartButton.addEventListener('click', ()=> {
+  gridDisplay.style.display = "none";
+  document.querySelector('.score-card').style.display = "none";
+  document.querySelector('.level-selector-container').style.display="block";
+  showHighScores();
+});

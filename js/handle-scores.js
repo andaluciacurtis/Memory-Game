@@ -1,41 +1,59 @@
+const bestEasyContainer = document.querySelector('.best-easy-score');
+const bestMediumContainer = document.querySelector('.best-medium-score');
+const bestHardContainer = document.querySelector('.best-hard-score');
+
 let easyHighScore = JSON.parse(localStorage.getItem('easyHighScore')) || null;
 let mediumHighScore = JSON.parse(localStorage.getItem('mediumHighScore')) || null;
 let hardHighScore = JSON.parse(localStorage.getItem('hardHighScore')) || null;
+
 
 // Fetches data from previous games to display below the difficulty selectors
 // If there are no previous games, then nothing is displayed.
 function showHighScores() {
   if (easyHighScore != null) {
-    document.querySelector('.best-easy-time').style.display = "block";
-    document.querySelector('.best-easy-time').innerHTML = `
+    bestEasyContainer.style.display = "block";
+    bestEasyContainer.style.opacity = "0";
+    bestEasyContainer.style.backgroundColor = "#8ed7f0";
+    bestEasyContainer.style.outline = "3px solid #8ed7f0";
+
+    bestEasyContainer.innerHTML = `
       <p class="highlight-text">HIGH SCORE</p>
       <p>Moves:${easyHighScore.moves}</p>
       <p>Time:${easyHighScore.time}</p>
     `;
   } else {
-    document.querySelector('.best-easy-time').style.display = "none";
+    bestEasyContainer.style.display = "none";
   }
 
   if (mediumHighScore != null) {
-    document.querySelector('.best-medium-time').style.display = "block";
-    document.querySelector('.best-medium-time').innerHTML = `
+    bestMediumContainer.style.display = "block";
+    bestMediumContainer.style.opacity = "0";
+    bestMediumContainer.style.backgroundColor = "#afd67e";
+    bestMediumContainer.style.outline = "3px solid #afd67e";
+
+    bestMediumContainer.innerHTML = `
       <p class="highlight-text">HIGH SCORE</p>
       <p>Moves:${mediumHighScore.moves}</p>
       <p>Time:${mediumHighScore.time}</p>
     `;
   } else {
-    document.querySelector('.best-medium-time').style.display = "none";
+    bestMediumContainer.style.display = "none";
   }
 
   if (hardHighScore != null) {
-    document.querySelector('.best-hard-time').style.display = "block";
-    document.querySelector('.best-hard-time').innerHTML = `
+    bestHardContainer.style.display = "block";
+    bestHardContainer.style.opacity = "0";
+    
+    bestHardContainer.style.backgroundColor = "#f286b6";
+    bestHardContainer.style.outline = "3px solid #f286b6";
+
+    bestHardContainer.innerHTML = `
       <p class="highlight-text">HIGH SCORE</p>
       <p>Moves:${hardHighScore.moves}</p>
       <p>Time:${hardHighScore.time}</p>
     `;
   } else {
-    document.querySelector('.best-hard-time').style.display = "none";
+    bestHardContainer.style.display = "none";
   }
 }
 
